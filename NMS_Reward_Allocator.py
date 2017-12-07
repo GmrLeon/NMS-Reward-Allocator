@@ -3,7 +3,6 @@ from tkinter.filedialog import askopenfilename
 from tkinter.filedialog import asksaveasfilename
 from tkinter import ttk
 from tkinter import messagebox
-import subprocess
 import xml.etree.ElementTree as ET
 
 root = Tk()
@@ -47,13 +46,6 @@ class GUI(Frame):
         self.savexml.set("None")
 
         self.createWidgets()
-        self.startProgram()
-
-    def startProgram(self):
-        SW_MINIMIZE = 6
-        info = subprocess.STARTUPINFO()
-        info.dwFlags = subprocess.STARTF_USESHOWWINDOW
-        info.wShowWindow = SW_MINIMIZE
 
     def centerWin(self, win):
         win.update_idletasks()
