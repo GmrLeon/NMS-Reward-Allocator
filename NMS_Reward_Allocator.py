@@ -255,7 +255,10 @@ with the NMS_DIALOG name, please remember to back up the original file before ov
     def loadexml(self):
         lfn = askopenfilename(title="Choose exml to parse", filetypes = (("Exml files", "*.exml"),
                                                 ("All files", "*.*")))
-        self.selexml.set(lfn)
+        if lfn == '':
+            return
+        else:
+            self.selexml.set(lfn)
 
     def export(self, selectedAlienRace, selectedIntType, selectedRewID):
         if self.selexml.get() == "None":
